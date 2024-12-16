@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :quotes
+      resources :quote_verifications, only: :create
+    end
+  end
   resources :quotes
   resources :customers
   resources :posts
